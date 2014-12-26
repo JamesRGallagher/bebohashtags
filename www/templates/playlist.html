@@ -1,0 +1,14 @@
+<ion-view view-title="{{pTitle}}">
+  <ion-content>
+      <ion-list>
+      
+       <a ng-repeat="thing in things" class="item item-thumbnail-left" href="#">
+      <img src={{thing.imagelink}}>
+      <h2>{{thing.hash}}</h2>
+      
+    </a>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
