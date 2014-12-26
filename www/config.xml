@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        id          = "com.jamesgallagherweb.bebo"
+        versionCode = "10" 
+        version     = "1.2.0" >
+    <name>Bebo Hashtags</name>
+
+    <description>
+        App for all the cool bebo hashtags 
+    </description>
+
+    <author href="jamesrgallagher.github.io" email="jamesrgallagher1@gmail.com">
+        James Gallagher
+    </author>
+
+ <icon src="icon.png" />
+</widget>

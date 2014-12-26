@@ -35,23 +35,24 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Celeb', id: 1 },
-    { title: 'Other', id: 2 },
-    { title: 'Things', id: 3 },
-    { title: 'Food', id: 4 },
-    { title: 'Sport', id: 5 },
-    { title: 'Dance', id: 6 },
-    { title: 'Moods', id: 7 },
-    { title: 'Transport', id: 8 },
-    { title: 'Expressions', id: 9 }
+    { title: 'Celeb', imagelink: "img/Celeb.png",desc: "See celebrities as bebo characters!" },
+    { title: 'Other', imagelink: "img/other.png",desc: "Crazy and random hastags!" },
+    { title: 'Things', imagelink: "img/things.png",desc: "On the #phone"  },
+    { title: 'Food', imagelink: "img/food.png",desc: "#nom" },
+    { title: 'Sport', imagelink: "img/sport.png",desc: "Off to play #football"  },
+    { title: 'Dance', imagelink: "img/dance.png",desc: "Oppa #gagnamstyle!" },
+    { title: 'Moods', imagelink: "img/moods.png",desc: "Bebo makes me #happy"},
+    { title: 'Transport', imagelink: "img/Transport.png",desc:"In my #car" },
+    { title: 'Expressions', imagelink: "img/expresions.png",desc:"#OMGROFLMAO" }
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams,$http) {
+.controller('PlaylistCtrl', function($scope, $stateParams,$http,$ionicLoading) {
 
   var parts = document.URL.split("/");
   var result = parts[parts.length - 1];
   $scope.pTitle = result;
+  $ionicLoading.show();
   $http.get('http://www.bebohashtags.co.uk/crud.php?cat='+result)
   .success(function(data, status, headers, config) {
    for(i=0;i<data.length;i++){
@@ -59,12 +60,17 @@ angular.module('starter.controllers', [])
     if (data[i].imagelink.indexOf("twimg") ==-1){
         data[i].imagelink = "http://bebohashtags.co.uk/pic/"+data[i].imagelink;
       }
+      if (data[i].hash.indexOf("#") ==-1){
+        data[i].hash = "#"+data[i].hash;
+      }
 
 
    }
+   $ionicLoading.hide();
    $scope.things = data;
   }).
   error(function(data, status, headers, config) {
+    $ionicLoading.hide();
     // called asynchronously if an error occurs
     // or server returns response with an error status.
     alert('Check your internet connection, there has been an error :( ')

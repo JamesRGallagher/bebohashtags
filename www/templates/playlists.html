@@ -1,9 +1,12 @@
 <ion-view view-title="Categories">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.title}}">
-        {{playlist.title}}
-      </ion-item>
+    <ion-content>
+      <ion-list>
+      
+       <a ng-repeat="playlist in playlists" class="item item-thumbnail-left" href="#/app/playlists/{{playlist.title}}">
+      <img src={{playlist.imagelink}}>
+      <h2>{{playlist.title}}</h2>
+       <p>{{playlist.desc}}</p>
+    </a>
     </ion-list>
   </ion-content>
 </ion-view>

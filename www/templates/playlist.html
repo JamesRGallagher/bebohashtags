@@ -2,11 +2,12 @@
   <ion-content>
       <ion-list>
       
-       <a ng-repeat="thing in things" class="item item-thumbnail-left" href="#">
+       <span ng-repeat="thing in things" class="item item-thumbnail-left" href="#">
       <img src={{thing.imagelink}}>
       <h2>{{thing.hash}}</h2>
+    
       
-    </a>
+    </span>
     </ion-list>
   </ion-content>
 </ion-view>
