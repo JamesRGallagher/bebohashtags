@@ -35,14 +35,14 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Celeb', imagelink: "img/Celeb.png",desc: "See celebrities as bebo characters!" },
+    { title: 'Celeb', imagelink: "img/celeb.png",desc: "See celebrities as bebo characters!" },
     { title: 'Other', imagelink: "img/other.png",desc: "Crazy and random hastags!" },
     { title: 'Things', imagelink: "img/things.png",desc: "On the #phone"  },
     { title: 'Food', imagelink: "img/food.png",desc: "#nom" },
     { title: 'Sport', imagelink: "img/sport.png",desc: "Off to play #football"  },
     { title: 'Dance', imagelink: "img/dance.png",desc: "Oppa #gagnamstyle!" },
     { title: 'Moods', imagelink: "img/moods.png",desc: "Bebo makes me #happy"},
-    { title: 'Transport', imagelink: "img/Transport.png",desc:"In my #car" },
+    { title: 'Transport', imagelink: "img/transport.png",desc:"In my #car" },
     { title: 'Expressions', imagelink: "img/expresions.png",desc:"#OMGROFLMAO" }
   ];
 })
